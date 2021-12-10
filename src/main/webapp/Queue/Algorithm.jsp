@@ -89,7 +89,7 @@ endif<br>
 <br>
 end procedure</p>
 </div>
-          
+    <br>      
        
  <div class="alert alert-secondary" role="alert">
 <h4 class="alert-heading">isempty()</h4>
@@ -103,7 +103,7 @@ endif<br>
 <br>
  end procedure</p>
 </div>
-          
+     <br>     
  <div class="alert alert-secondary" role="alert">
 <h4 class="alert-heading">peek()</h4>
 <p>begin procedure  peek<br>
@@ -113,7 +113,7 @@ return queue[front]<br>
 <br>
  end procedure</p>
 </div>
-          
+    <br>      
     
           
           
@@ -130,7 +130,7 @@ queue[rear] ← data<br>
  <br>
  end procedure</p>
 </div>
-          
+  <br>        
 <div class="alert alert-secondary" role="alert">
 <h4 class="alert-heading">Algorithm for dequeue operation</h4>
 <p>begin procedure dequeue<br>
@@ -144,7 +144,7 @@ front ← front + 1<br>
  <br>
  end procedure</p>
 </div>
-          
+   <br>       
           
 
 	</div>

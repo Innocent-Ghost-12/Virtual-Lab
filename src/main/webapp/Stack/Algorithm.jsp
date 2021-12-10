@@ -78,61 +78,72 @@
 	<div class="vlabs-page-content px-4 pb-4 flex-grow-1">
 	  <H2> ALGORITHM : </H2>
     <P>
-      <OL>
-        <LI>
-          Start.
-        </LI>
-        <LI>
-          Accept End points of the line which are (x1, y1) and (x2, y2).
-        </LI>
-        <LI>
-          Calculate the Length of the Line segment:
-          <br>
-          if ( abs(x2-x1) &gt;= abs(y2-y1) )
-          <br>
-          then
-          <br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; length = abs(x2-x1).
-          <br>
-          else
-          <br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; length = abs (y2-y1).
-        </LI>
-        <LI>
-          Calculate the increment in X and Y directions respectively as:
-          <br>
-          xincr = (x2-x1) / length.
-          <br>
-          yincr = (y2-y1) / length.
-        </LI>
-        <LI>
-          Initialize:
-          <br>
-          x=x1+0.5.
-          <br>
-          y=y1+0.5.
-          <br>
-          i=1.
-        </LI>
-        <LI>
-          while ( i &lt;= length )
-          <br>
-          {
-            <br>
-            plot (integer(x), integer(y))
-            <br>
-            x = x + xincr.
-            <br>
-            y = y + yincr.
-            <br>
-            i   = i + 1.
-            <br>
-          }
-        </LI>
-        <LI>
-          Stop.
-        </LI>
-      </OL>
+    <div class="alert alert-secondary" role="alert">
+  <h4 class="alert-heading">isfull()</h4>
+  <p>begin procedure isfull<br>
+<br>
+   &nbsp;&nbsp;if top equals to MAXSIZE<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;return true<br>
+   &nbsp;&nbsp;else<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;return false<br>
+   &nbsp;&nbsp;endif<br>
+   <br>
+end procedure</p>
+  </div>
+    <br>
+    <div class="alert alert-secondary" role="alert">
+  <h4 class="alert-heading">isempty()</h4>
+  <p>begin procedure isempty<br>
+<br>
+   &nbsp;&nbsp;if top less than 1<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;return true<br>
+   &nbsp;&nbsp;else<br>
+      &nbsp;&nbsp;return false<br>
+   &nbsp;&nbsp;endif<br>
+   <br>
+end procedure</p>
+  </div>
+    <br>
+    <div class="alert alert-secondary" role="alert">
+  <h4 class="alert-heading">peek()</h4>
+  <p>begin procedure peek <br>
+      <br>
+   &nbsp;&nbsp;return stack[top]<br>
+   <br>
+`   end procedure</p>
+  </div>
+    <br>
+    <div class="alert alert-secondary" role="alert">
+  <h4 class="alert-heading">push()</h4>
+  <p>begin procedure push: stack, data
+<br>
+<br>
+   &nbsp;&nbsp;if stack is full<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;return null<br>
+   &nbsp;&nbsp;endif<br>
+   <br>
+      &nbsp;&nbsp;top ← top + 1<br>
+   &nbsp;&nbsp;stack[top] ← data<br>
+   <br>
+end procedure</p>
+  </div>
+    <br>
+    <div class="alert alert-secondary" role="alert">
+  <h4 class="alert-heading">pop()</h4>
+  <p>begin procedure pop: stack
+<br>
+<br>
+   &nbsp;&nbsp;if stack is empty<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;return null<br>
+   &nbsp;&nbsp;endif<br>
+   <br>
+    &nbsp;&nbsp;data ← stack[top]<br>
+   &nbsp;&nbsp;top ← top - 1<br>
+   &nbsp;&nbsp;return data<br>
+   <br>
+end procedure</p>
+  </div>
+    <br>
     </P>
 	</div>
       </div>

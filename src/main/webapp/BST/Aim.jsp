@@ -27,7 +27,7 @@
     
     <header class="vlabs-header sticky-top bg-white">
       <!-- navbar -->
-            <nav class="p-0 navbar navbar-light d-flex align-items-stretch">
+        <nav class="p-0 navbar navbar-light d-flex align-items-stretch">
         <div class="d-flex justify-content-center">        
           <a href="#" class="navbar-brand">
           <img src="../images/logo.PNG" alt="vlabs logo">
@@ -92,7 +92,7 @@ preorder). </H4>
 	<div class="col d-flex flex-column">
 	  <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Contact Us</span>
 	  <span> Phone: SIES-GST Enquiry: 022-6108-2400 </span>
-	  <span> Email: siesgst@sies.edu.in </span>	
+	  <span> Email: siesgst@sies.edu.in </span>
 	</div>
 	<div class="col d-flex flex-column">
 	  <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Follow Us</span>

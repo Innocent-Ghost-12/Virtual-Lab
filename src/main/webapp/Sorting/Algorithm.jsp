@@ -78,61 +78,216 @@
 	<div class="vlabs-page-content px-4 pb-4 flex-grow-1">
 	  <H2> ALGORITHM : </H2>
     <P>
-      <OL>
-        <LI>
-          Start.
-        </LI>
-        <LI>
-          Accept End points of the line which are (x1, y1) and (x2, y2).
-        </LI>
-        <LI>
-          Calculate the Length of the Line segment:
-          <br>
-          if ( abs(x2-x1) &gt;= abs(y2-y1) )
-          <br>
-          then
-          <br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; length = abs(x2-x1).
-          <br>
-          else
-          <br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; length = abs (y2-y1).
-        </LI>
-        <LI>
-          Calculate the increment in X and Y directions respectively as:
-          <br>
-          xincr = (x2-x1) / length.
-          <br>
-          yincr = (y2-y1) / length.
-        </LI>
-        <LI>
-          Initialize:
-          <br>
-          x=x1+0.5.
-          <br>
-          y=y1+0.5.
-          <br>
-          i=1.
-        </LI>
-        <LI>
-          while ( i &lt;= length )
-          <br>
-          {
-            <br>
-            plot (integer(x), integer(y))
-            <br>
-            x = x + xincr.
-            <br>
-            y = y + yincr.
-            <br>
-            i   = i + 1.
-            <br>
-          }
-        </LI>
-        <LI>
-          Stop.
-        </LI>
-      </OL>
+        <!--<h1 class="h3"> Quick Sort </h1>-->
+    <div class="alert alert-secondary" role="alert">
+  <h4 class="alert-heading">Quick Sort</h4>
+  <p>function partitionFunc(left, right, pivot)<br>
+      &nbsp;&nbsp;leftPointer = left<br>
+      &nbsp;&nbsp;rightPointer = right - 1<br>
+      <br>
+      &nbsp;&nbsp;while True do<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;while A[++leftPointer] < pivot do<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//do-nothing<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;end while<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;while rightPointer > 0 && A[--rightPointer] > pivot do<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//do-nothing<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;end while<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;if leftPointer >= rightPointer<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;else<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swap leftPointer,rightPointer<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;end if<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;end while<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;swap leftPointer,right<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;return leftPointer<br>
+        <br>
+      end function<br>
+      <br>
+      <br>
+  procedure quickSort(left, right)<br>
+<br>
+   &nbsp;&nbsp;if right-left <= 0<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;return<br>
+   &nbsp;&nbsp;else <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;pivot = A[right]<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;partition = partitionFunc(left, right, pivot)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;quickSort(left,partition-1)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;quickSort(partition+1,right)<br>
+   &nbsp;&nbsp;endif<br>
+   <br>
+end procedure</p>
+  </div>
+    <br>
+    <br>
+    <div class="alert alert-secondary" role="alert">
+  <h4 class="alert-heading">Merge Sort</h4>
+  <p>procedure mergesort( var a as array )<br>
+      &nbsp;&nbsp;if ( n == 1 ) return a<br>
+      <br>
+      &nbsp;&nbsp;var l1 as array = a[0] ... a[n/2]<br>
+      &nbsp;&nbsp;var l2 as array = a[n/2+1] ... a[n]<br>
+      <br>
+      &nbsp;&nbsp;l1 = mergesort( l1 )<br>
+      &nbsp;&nbsp;l2 = mergesort( l2 )<br>
+      <br>
+      &nbsp;&nbsp;return merge( l1, l2 )<br>
+      <br>
+     end procedure<br>
+        <br>
+     procedure merge( var a as array, var b as array )<br>
+     <br>
+     &nbsp;&nbsp;var c as array<br>
+     &nbsp;&nbsp;while ( a and b have elements )<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;if ( a[0] > b[0] )<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add b[0] to the end of c<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;remove b[0] from b<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;else<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add a[0] to the end of c<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;remove a[0] from a<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;end if<br>
+     &nbsp;&nbsp;end while<br>
+     <br>
+     &nbsp;&nbsp;while ( a has elements )<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;add a[0] to the end of c<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;remove a[0] from a<br>
+   &nbsp;&nbsp;end while<br>
+   <br>
+   &nbsp;&nbsp;while ( b has elements )<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;add b[0] to the end of c<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;remove b[0] from b<br>
+   &nbsp;&nbsp;end while<br>
+   <br>
+   return c<br>
+end procedure</p>
+  </div>
+    <br>
+    <br>
+    <div class="alert alert-secondary" role="alert">
+  <h4 class="alert-heading">Bubble Sort</h4>
+  <p>procedure bubbleSort( list : array of items )<br>
+      <br>
+      &nbsp;&nbsp;loop = list.count;<br>
+      <br>
+      &nbsp;&nbsp;for i = 0 to loop-1 do:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;swapped = false<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;for j = 0 to loop-1 do:<br>
+      <br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* compare the adjacent elements */<br>  
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if list[j] > list[j+1] then<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* swap them */<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swap( list[j], list[j+1] )<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swapped = true<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;end for<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;/*if no number was swapped that means array is sorted now, break the loop.*/<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;if(not swapped) then<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;end if<br>
+      <br>
+   &nbsp;&nbsp;end for<br>
+   <br>
+end procedure return list
+   <br>
+  </p>
+  </div>
+    <br>
+    <br>
+  <div class="alert alert-secondary" role="alert">
+  <h4 class="alert-heading">Selection Sort</h4>
+  <p>procedure selection sort <br>
+   &nbsp;&nbsp;list  : array of items<br>
+   &nbsp;&nbsp;n     : size of list<br>
+<br>
+   &nbsp;&nbsp;for i = 1 to n - 1<br>
+   &nbsp;&nbsp;/* set current element as minimum*/<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;min = i    <br>
+  <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;/* check the element to be minimum */<br>
+<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;for j = i+1 to n <br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if list[j] < list[min] then<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min = j;<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;end for<br>
+<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;/* swap the minimum element with the current element*/<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;if indexMin != i  then<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swap list[min] and list[i]<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;end if<br>
+   &nbsp;&nbsp;end for<br>
+<br>	
+end procedure
+   <br>
+  </p>
+  </div>
+    <br>
+    <br>
+    <div class="alert alert-secondary" role="alert">
+  <h4 class="alert-heading">Insertion Sort</h4>
+  <p>procedure insertionSort( A : array of items )<br>
+   &nbsp;&nbsp;int holePosition<br>
+   &nbsp;&nbsp;int valueToInsert<br>
+	<br>
+   &nbsp;&nbsp;for i = 1 to length(A) inclusive do:<br>
+	<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;/* select value to be inserted */<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;valueToInsert = A[i]<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;holePosition = i<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;/*locate hole position for the element to be inserted */<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;while holePosition > 0 and A[holePosition-1] > valueToInsert do:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A[holePosition] = A[holePosition-1]<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;holePosition = holePosition -1<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;end while<br>
+	<br>	
+      &nbsp;&nbsp;&nbsp;&nbsp;/* insert the number at hole position */<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;A[holePosition] = valueToInsert<br>
+      <br>
+   &nbsp;&nbsp;end for<br>
+	<br>
+end procedure<br>
+  </p>
+  </div>
+    <br>
+    <br>
+    <div class="alert alert-secondary" role="alert">
+  <h4 class="alert-heading">Counting Sort</h4>
+  <p>procedure countingSort( A : array of items )<br>
+      <br>
+   &nbsp;&nbsp;max = get maximum element from array.<br>
+   &nbsp;&nbsp;define count array of size [max+1]<br>
+<br>
+   &nbsp;&nbsp;for i := 0 to max do<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;count[i] = 0 //set all elements in the count array to 0<br>
+   &nbsp;&nbsp;done<br>
+<br>
+   &nbsp;&nbsp;for i := 1 to size do<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;increase count of each number which have found in the array<br>
+   &nbsp;&nbsp;done<br>
+<br>
+   &nbsp;&nbsp;for i := 1 to max do<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;count[i] = count[i] + count[i+1] //find cumulative frequency<br>
+   &nbsp;&nbsp;done<br>
+<br>
+   &nbsp;&nbsp;for i := size to 1 decrease by 1 do<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;store the number in the output array<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;decrease count[i]<br>
+   &nbsp;&nbsp;done<br>
+<br>
+   &nbsp;&nbsp;return the output array<br>
+   <br>
+end procedure<br>
+  </p>
+  </div>
     </P>
 	</div>
       </div>

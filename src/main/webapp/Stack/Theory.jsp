@@ -78,26 +78,24 @@
 	<div class="vlabs-page-content px-4 pb-4 flex-grow-1">
 	 <H2> THEORY : </H2>
     <P>
-      <UL>
-        <LI>
-          DDA is an incremental scan conversion method to determine points on screen to draw a line where the Start and End coordinates of the Line segment are provided.
-        </LI>
-        <LI>
-          DDA calculates the length of the line segment with respect to the difference between either X coordinates or Y coordinates, whichever is greater.
-        </LI>
-        <LI>
-          In DDA, we either step across X-Direction and solve for Y (In case of gentle slope lines ) or we step Y-Direction and solve for X (incase of sharp slope lines) with the help of increment in either X and/or Y directions.
-        </LI>
-        <LI>
-          As the increments are calculated with respect to X  or Y direction ,so one of the increment will be either (1,/0/-1) and the other increment may be in float.
-        </LI>
-        <LI>
-          Floating point arithmetic in DDA algorithm is time-consuming which results in poor end point accuracy.
-        </LI>
-        <LI>
-          It is the simplest algorithm and does not require special skills for implementation.
-        </LI>
-      </UL>
+      A stack is an ordered list in which all insertions and deletions are made at one end, called the top. Just like a plate stack in canteens where plates are added to the top and later removed from the top.
+      <br>
+      <br>
+      The restrictions on a stack imply that if the elements A,B,C,D,E are added to the stack, n that order, then the first element to be removed/deleted must be E. Equivalently we say that the last element to be inserted into the stack will be the first to be removed. For this reason stacks are sometimes referred to as Last In First Out (LIFO) lists.
+      <br>
+      <br>
+      The main function that has to be included in stack are:
+      <br>
+      <ol>
+        <li><b>isfull()</b>: This is to check weather the stack is full or not. Returns true if stack is full. </li>
+        <li><b>isempty()</b>: This is to check weather the stack is empty or not. Returns true if stack is empty. </li>
+        <li><b>push()</b>: It is used to enter element at the top of the stack.</li>
+        <li><b>pop()</b>: It is used to remove first element from the top of stack.</li>
+        <li><b>stacktop()</b>: This function is used to return the value at the stack top.</li>
+        
+
+    </ol>
+
     </P>
 	</div>
       </div>

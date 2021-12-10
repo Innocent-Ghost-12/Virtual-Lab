@@ -78,26 +78,131 @@
 	<div class="vlabs-page-content px-4 pb-4 flex-grow-1">
 	 <H2> THEORY : </H2>
     <P>
-      <UL>
-        <LI>
-          DDA is an incremental scan conversion method to determine points on screen to draw a line where the Start and End coordinates of the Line segment are provided.
-        </LI>
-        <LI>
-          DDA calculates the length of the line segment with respect to the difference between either X coordinates or Y coordinates, whichever is greater.
-        </LI>
-        <LI>
-          In DDA, we either step across X-Direction and solve for Y (In case of gentle slope lines ) or we step Y-Direction and solve for X (incase of sharp slope lines) with the help of increment in either X and/or Y directions.
-        </LI>
-        <LI>
-          As the increments are calculated with respect to X  or Y direction ,so one of the increment will be either (1,/0/-1) and the other increment may be in float.
-        </LI>
-        <LI>
-          Floating point arithmetic in DDA algorithm is time-consuming which results in poor end point accuracy.
-        </LI>
-        <LI>
-          It is the simplest algorithm and does not require special skills for implementation.
-        </LI>
-      </UL>
+        <h4 class="alert-heading">Quick Sort</h4>
+        <br>
+        QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot.<br>
+        <br>
+        The key process in quickSort is partition(). Target of partitions is, given an array and an element x of array as pivot, put x at its correct position in sorted array and put all smaller elements (smaller than x) before x, and put all greater elements (greater than x) after x. All this should be done in linear time.<br>
+        <br>
+        Analysis of QuickSort <br>
+Time taken by QuickSort, in general, can be written as following. <br>
+<br>
+<span class="alert alert-secondary" role="alert">
+    T(n) = T(k) + T(n-k-1) + θ(n)</span><br>
+    <br>
+The first two terms are for two recursive calls, the last term is for the partition process. k is the number of elements which are smaller than pivot.<br>
+The time taken by QuickSort depends upon the input array and partition strategy. Following are three cases.<br>
+
+
+
+Worst Case: The worst case occurs when the partition process always picks greatest or smallest element as pivot. If we consider above partition strategy where last element is always picked as pivot, the worst case would occur when the array is already sorted in increasing or decreasing order. Following is recurrence for worst case. <br>
+<br>
+<div style="display: inline-block" class="alert alert-secondary" role="alert">
+    T(n) = T(0) + T(n-1) + θ(n)<br>
+which is equivalent to  <br>
+T(n) = T(n-1) + θ(n)</div><br>
+    <br>
+
+
+The solution of above recurrence is  θ        (n²).<br>
+<br>
+Best Case:<br> The best case occurs when the partition process always picks the middle element as pivot. Following is recurrence for best case. <br>
+<br>
+<span class="alert alert-secondary" role="alert">
+    T(n) = 2T(n/2) + θ(n)</span><br>
+    <br>
+
+The solution of above recurrence is θ        (nLogn).<br>
+<br>
+Average Case: <br>
+To do average case analysis, we need to consider all possible permutation of array and calculate time taken by every permutation which doesn’t look easy. <br>
+We can get an idea of average case by considering the case when partition puts O(n/9) elements in one set and O(9n/10) elements in other set. Following is recurrence for this case. <br>
+<br>
+<span class="alert alert-secondary" role="alert">
+    T(n) = T(n/9) + T(9n/10) + θ(n)</span><br>
+    <br>
+Solution of above recurrence is also O(nLogn)
+Although the worst case time complexity of QuickSort is O(n2) which is more than many other sorting algorithms like Merge Sort and Heap Sort, QuickSort is faster in practice, because its inner loop can be efficiently implemented on most architectures, and in most real-world data. QuickSort can be implemented in different ways by changing the choice of pivot, so that the worst case rarely occurs for a given type of data. However, merge sort is generally considered better when data is huge and stored in external storage. <br>
+<br>
+Is QuickSort stable? <br>
+The default implementation is not stable. However any sorting algorithm can be made stable by considering indexes as comparison parameter. <br>
+<br>
+Is QuickSort In-place? <br>
+As per the broad definition of in-place algorithm it qualifies as an in-place sorting algorithm as it uses extra space only for storing recursive function calls but not for manipulating the input. <br>
+<br>
+<br>
+<h4 class="alert-heading">Merge Sort</h4>
+<br>
+Merge Sort is a Divide and Conquer algorithm. It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves. The merge() function is used for merging two halves. The merge(arr, l, m, r) is a key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.<br>
+Time Complexity: Sorting arrays on different machines. Merge Sort is a recursive algorithm and time complexity can be expressed as following recurrence relation. <br>
+T(n) = 2T(n/2) + θ(n)<br>
+<br>
+The above recurrence can be solved either using the Recurrence Tree method or the Master method. It falls in case II of Master Method and the solution of the recurrence is θ(nLogn). Time complexity of Merge Sort is  θ(nLogn) in all 3 cases (worst, average and best) as merge sort always divides the array into two halves and takes linear time to merge two halves.<br>
+<br>
+Auxiliary Space: O(n)<br>
+<br>
+Algorithmic Paradigm: Divide and Conquer<br>
+<br>
+Sorting In Place: No in a typical implementation<br>
+<br>
+Stable: Yes<br>
+<br>
+<br>
+<h4 class="alert-heading">Bubble Sort</h4>
+<br>
+Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.<br>
+<br>
+Worst and Average Case Time Complexity: O(n*n). Worst case occurs when array is reverse sorted.<br>
+<br>
+Best Case Time Complexity: O(n). Best case occurs when array is already sorted.<br>
+<br>
+Auxiliary Space: O(1)<br>
+<br>
+Boundary Cases: Bubble sort takes minimum time (Order of n) when elements are already sorted.<br>
+<br>
+Sorting In Place: Yes<br>
+<br>
+Stable: Yes<br>
+<br><br>
+<h4 class="alert-heading">Selection Sort</h4>
+<br>
+The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array.<br>
+1) The subarray which is already sorted. <br>
+2) Remaining subarray which is unsorted.<br>
+In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray. <br>
+<br>
+Time Complexity: O(n2) as there are two nested loops.<br>
+<br>
+Auxiliary Space: O(1) <br>
+<br>
+The good thing about selection sort is it never makes more than O(n) swaps and can be useful when memory write is a costly operation. <br>
+<br>
+Stability : The default implementation is not stable. However it can be made stable. Please see stable selection sort for details.<br>
+<br>
+In Place : Yes, it does not require extra space.<br>
+<br><br>
+<h4 class="alert-heading">Insertion Sort</h4><br>
+Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.<br>
+<br>
+Time Complexity: O(n^2) <br>
+<br>
+Auxiliary Space: O(1)<br>
+<br>
+Boundary Cases: Insertion sort takes maximum time to sort if elements are sorted in reverse order. And it takes minimum time (Order of n) when elements are already sorted.<br>
+<br>
+Sorting In Place: Yes<br>
+<br>
+Stable: Yes<br>
+<br>
+<br>
+<br>
+<h4 class="alert-heading">Counting Sort</h4><br>
+Counting sort is a sorting technique based on keys between a specific range. It works by counting the number of objects having distinct key values (kind of hashing). Then doing some arithmetic to calculate the position of each object in the output sequence.<br>
+<br>
+Time Complexity: O(n+k) where n is the number of elements in input array and k is the range of input. <br>
+<br>
+Auxiliary Space: O(n+k)<br>
+<br>
     </P>
 	</div>
       </div>

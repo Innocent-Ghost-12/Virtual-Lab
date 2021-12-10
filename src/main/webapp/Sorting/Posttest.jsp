@@ -8,11 +8,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="shortcut icon" href="../images/small-logo.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Sort Post test</title>
-    <link rel="stylesheet" href="sortpost.css">
+    <link rel="stylesheet" href="../css/posttest.css">
 </head>
 <body>
     <div class="main-div">
@@ -38,7 +39,7 @@
             </ul>
             <button id="submit">submit</button>
             <div id="showScore" class="scoreArea"></div>
-            <script src="sortpost.js"></script>
+            <script src="../js/sortpost.js"></script>
         </div>
     </div>
 </body>

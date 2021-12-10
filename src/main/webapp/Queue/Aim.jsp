@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Welcome to Virtual Labs</title>
-    <link rel="shortcut icon" href="../images/logo.PNG">
+    <link rel="shortcut icon" href="../images/small-logo.png">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/vlabs-style.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -76,8 +76,7 @@
 </div>
 	<div class="vlabs-page-content px-4 pb-4 flex-grow-1">
 	  <H2> AIM : </H2>
-    <H4> Implement Linear Queue ADT. </H4>
-	</div>
+     <H4> Implement Linear Queue ADT. </H4></div>
       </div>
     </div>
     <footer class="text-light pt-2 vlabs-footer d-flex flex-column">
@@ -91,7 +90,8 @@
 	<div class="col d-flex flex-column">
 	  <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Contact Us</span>
 	  <span> Phone: SIES-GST Enquiry: 022-6108-2400 </span>
-	  <span> Email: siesgst@sies.edu.in </span>	</div>
+	  <span> Email: siesgst@sies.edu.in </span>
+	</div>
 	<div class="col d-flex flex-column">
 	  <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Follow Us</span>
 	  <div class="social-links">

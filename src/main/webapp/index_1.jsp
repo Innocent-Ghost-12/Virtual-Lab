@@ -67,15 +67,53 @@
     <title>Hello, world!</title>
   </head>
   <body style="background-color: grey">
-     <form method="POST" action="index_1_1.jsp" class="row g-3">
-         <div  class="col-12">
-    <label for="inputAddress" class="form-label">Address</label>
-    <textarea style="height: 120px" class="form-control" id="inputAddress" name="inputAddress" placeholder="1234 Main St"></textarea>
-  </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign in</button>
-  </div>
-</form>
+      <div class="container">
+          <div style="margin: 40px" ></div>
+  <table class="table text-center table-dark table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Sr.No</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Feedback  </th>
+    </tr>
+  </thead>
+  <tbody>
+<%
+String sql = "SELECT id, name, email, message " +
+                     "FROM feedback";
+try{ 
+Class.forName("com.mysql.cj.jdbc.Driver");
+Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/miniproject","root","Faiz@MySQL#2021");
+Statement st=conn.createStatement();
+ResultSet rs = st.executeQuery(sql);
+int current_id;
+String current_name;
+String current_email;
+String current_message;
+
+while (rs.next()) {
+                current_id = rs.getInt("id");
+                current_name = rs.getString("name");
+                current_email = rs.getString("email");
+                current_message = rs.getString("message");
+                
+                %> <tr>
+      <td scope="col"><%= current_id %></th>
+      <td scope="col"><%= current_name%></th>
+      <td scope="col"><%=current_email%></th>
+      <td scope="col"><%=current_message%></th>
+    </tr> <%
+        }
+}
+catch(Exception e){
+out.println(e);
+}
+
+%>
+
+  </tbody>
+</table></div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -88,9 +126,3 @@
     -->
   </body>
 </html>
-
-
-
-
-<!--<form method="post" action=
-"https://www.jdoodle.com/api/redirect-to-post/c-online-compiler">-->
